@@ -142,7 +142,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: var(--first-color-lighten);
+    z-index: var(--z-fixed);
+    background-color: var(--first-color-lighten);
     box-shadow: 0 2px 4px rgba(0,0,0,.1);
 }
 
@@ -230,7 +231,7 @@
     text-align: center;
 }
 
-.home__img{
+ .home__img{
     padding-top: 1; /*===== padding-top: 1.0rem; =====*/
     padding-left: 1; /*===== padding-left: .8rem; =====*/
     width: 160px;
@@ -241,6 +242,7 @@
     margin-bottom: var(--mb-2);
 
 }
+
 
 /*===== .home__img img{
     width: 155px;
@@ -352,6 +354,99 @@
 
 
 /* ===== FOOTER =====*/
+.footer{
+    background-color: var(--first-color-darken);
+    color: var(--first-color-lighten);
+    text-align: center;
+}
+.footer__title{
+    font-size: var(--h1-font-size);
+    margin-bottom: var(--mb-2);
+}
+.footer__description{
+    margin-bottom: var(--mb-2);
+}
+.footer__social{
+    margin-bottom: 3rem;
+}
+.footer__link{
+    display: inline-flex;
+    background-color: var(--first-color);
+    color: var(--first-color-lighten);
+    font-size: 1.1rem;
+    border-radius: 50%;
+    padding: .40rem;
+    margin: 0 var(--mb-1);
+    transition: .3s;
+}
+.footer__link:hover{
+    background-color: var(--first-color-lighten);
+    color: var(--first-color);
+}
 
-
+.footer__copy{
+    font-size: var(--smaller-font-size);
+    color: var(--text-color);
+}
 /* ===== MEDIA QUERIES=====*/
+
+@media screen and (min-width: 768px) {
+    .home__button{
+        width: initial;
+    }
+.about__container{
+    grid-template-columns: repeat(2,1fr);
+
+}
+.about__data{
+    text-align: initial;
+}
+
+.about__description{
+    margin-bottom: var(--mb-5);
+
+}
+.about__information{
+    padding-left: 4rem;
+}
+
+.footer{
+    background: none;
+}
+
+.footer__container{
+    background-color: var(--first-color-darken);
+    padding: 3rem 0;
+    border-radius: .5rem;
+}
+    
+}
+
+@media screen and (min-width){
+    body{
+        margin: 0;
+        padding-left: var(--nav-width);
+    }
+
+    .l-header{
+        width: 0;
+    }
+
+    .nav__toggle, .nav__close{
+        display: none;
+    }
+
+    .nav__menu{
+        left: 0;
+    }
+    .home__container{
+        height: 100vh;
+    }
+    .section{
+        padding: 3rem 0 2rem;
+    }
+    .bd-grid{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
